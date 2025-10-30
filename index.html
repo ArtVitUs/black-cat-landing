@@ -40,6 +40,18 @@
     .btn-primary:hover{background:var(--accent-light);transform:translateY(-2px)}
     .btn-ghost{border:1px solid rgba(255,255,255,.2);color:var(--text)}
     .btn-ghost:hover{border-color:var(--accent)}
+    .btn.btn-primary {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.deal .btn.btn-primary {
+  display: block;
+  margin: 16px auto 0;
+  width: calc(100% - 32px); /* небольшие поля внутри блока */
+}
+
 
     .cta-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:flex-start}
     @media(max-width:880px){.cta-row{justify-content:center}}
@@ -168,6 +180,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
