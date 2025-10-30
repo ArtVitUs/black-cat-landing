@@ -110,6 +110,42 @@
     .cta-final{text-align:center;background:var(--gray-800);border-radius:20px;padding:40px;margin-top:40px}
 
     .footer{text-align:center;color:var(--muted);padding:32px 0;font-size:14px;border-top:1px solid rgba(255,255,255,.08)}
+    /* === ДЕСКТОП: вернуть исходный вид кнопок === */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 24px;        /* нормальная высота */
+  border-radius:14px;
+  font-weight:600;
+  width:auto;               /* НЕ растягиваем на десктопе */
+  max-width:none;
+  white-space:nowrap;       /* текст в одну строку на десктопе */
+}
+
+/* === МОБИЛЬНЫЕ: растягиваем по ширине и разрешаем перенос === */
+@media (max-width: 768px){
+  .btn{
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+    white-space:normal;     /* перенос текста */
+    line-height:1.25;
+    word-break:break-word;
+  }
+
+  /* чтобы кнопки в герое шли столбцом и не прилипали друг к другу */
+  .cta-row{ gap:12px; }
+  .cta-row .btn + .btn{ margin-left:0; }
+
+  /* кнопка в блоке .deal — на всю ширину контейнера */
+  .deal .btn.btn-primary{
+    display:block;
+    width:100%;
+    margin:16px auto 0;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -203,6 +239,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
