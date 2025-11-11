@@ -36,22 +36,6 @@
   box-shadow: var(--shadow);
   position: relative;
 }
-.hero-main {
-  font-size: clamp(36px, 4.4vw, 64px);
-  font-weight: 800;
-  color: #97ba02;          /* зелёный InfoHit */
-  margin: 0 0 24px;
-  line-height: 1.1;
-  white-space: nowrap;     /* не переносить строку */
-}
-
-/* чтобы корректно работало на мобильных */
-@media (max-width: 880px) {
-  .hero-main {
-    white-space: normal;   /* разрешаем переносы на телефоне */
-    text-align: center;
-  }
-}
 
 .hero-inner {
   display: grid;
@@ -64,102 +48,23 @@
 }
 
 .hero-title {
-  margin: 0;
+  grid-area: title;
   font-weight: 800;
   color: var(--accent);
   font-size: clamp(36px, 4.5vw, 60px);
+  margin: 0 0 20px;
   line-height: 1.1;
-}
-/* Заголовок "У нас — День Черной кошки" в одну строку на десктопе */
-.hero-title.nowrap {
-  white-space: nowrap;
-  font-size: clamp(32px, 3.6vw, 52px); /* чуть поменьше, чем общий h1 */
-}
-
-
-/* На мобильных разрешаем перенос, чтобы не вылезало за экран */
-@media (max-width: 880px) {
-  .hero-title.nowrap {
-    white-space: normal;
-    text-align: center;
-  }
 }
 
 .hero-subtitle {
-  margin: 10px 0 0; /* 🔹 убираем большой отступ сверху */
   font-weight: 800;
   color: var(--accent);
   font-size: clamp(32px, 4vw, 52px);
-  line-height: 1.1;
+  margin-bottom: 12px;
 }
+
 .hero-left {
   grid-area: left;
-}
-.hero-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.hero-subtitle {
-  font-size: clamp(32px, 4vw, 48px);
-  color: var(--accent);
-  font-weight: 800;
-  line-height: 1.2;
-  margin: 0;
-}
-
-.subtitle {
-  color: var(--muted);
-  font-size: 18px;
-  margin: 0;
-}
-
-.cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: center;
-}
-
-.cat-card {
-  background: var(--gray-800);
-  border-radius: 20px;
-  padding: 16px;
-  box-shadow: var(--shadow);
-  text-align: center;
-}
-
-.cat-video {
-  width: 100%;
-  border-radius: 14px;
-  display: block;
-}
-
-.cat-caption {
-  color: var(--muted);
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-/* адаптация под мобильные */
-@media (max-width: 880px) {
-  .hero-row {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    text-align: center;
-  }
-  .cta-row {
-    justify-content: center;
-  }
 }
 
 .cat-card {
@@ -520,31 +425,21 @@
   <div class="hero-inner">
 
     <!-- первая строка: на всю ширину -->
-<h1 class="hero-title highlight nowrap">У нас — День Черной кошки</h1>
+    <h1 class="hero-title">У нас — День Черной кошки</h1>
 
     <!-- вторая строка и остальной текст слева -->
-<div class="hero-row">
-  <div class="hero-left">
-    <h2 class="hero-subtitle">Черная пятница — уже не модно.</h2>
-    <p class="subtitle">
-      Скидки до 90% на все онлайн-курсы. Без очередей и ожиданий — только
-      ТОПовые знания от лучших школ <strong>ИнфоХит</strong>.
-    </p>
+    <div class="hero-left">
+      <h2 class="hero-subtitle">Черная пятница — уже не модно.</h2>
+      <p class="subtitle">
+        Скидки до 90% на все онлайн-курсы. Без очередей и ожиданий — только
+        ТОПовые знания от лучших школ <strong>ИнфоХит</strong>.
+      </p>
 
-    <div class="cta-row">
-      <a href="#catalog" class="btn btn-primary">Ловите удачу за хвост!</a>
-      <a href="#why" class="btn btn-ghost">Почему сейчас?</a>
+      <div class="cta-row">
+        <a href="#catalog" class="btn btn-primary">Ловите удачу за хвост!</a>
+        <a href="#why" class="btn btn-ghost">Почему сейчас?</a>
+      </div>
     </div>
-  </div>
-
-  <div class="cat-card">
-    <video autoplay muted loop playsinline class="cat-video">
-      <source src="IMG_2127.MOV" type="video/mp4" />
-    </video>
-    <div class="cat-caption">«Скидки не ждут. Прыгну — и заберу!»</div>
-  </div>
-</div>
-
 
     <!-- правая часть -->
     <div class="cat-card">
@@ -772,10 +667,6 @@
 
 </body>
 </html>
-
-
-
-
 
 
 
