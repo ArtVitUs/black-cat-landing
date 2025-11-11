@@ -28,11 +28,11 @@
 
     .container{max-width:1120px;margin:0 auto;padding:0 24px}
 
-  .hero {
-  background: radial-gradient(circle at top right,var(--accent-bg),transparent 60%),
-              linear-gradient(180deg,var(--gray-900),var(--gray-800));
+.hero {
+  background: radial-gradient(circle at top right, var(--accent-bg), transparent 60%),
+              linear-gradient(180deg, var(--gray-900), var(--gray-800));
   border-radius: var(--radius);
-  padding: 80px 32px;
+  padding: 64px 32px; /* было 80px — стало плотнее и ровнее */
   box-shadow: var(--shadow);
   position: relative;
 }
@@ -43,19 +43,37 @@
   grid-template-areas:
     "title title"
     "left  right";
-  gap: 40px;
+  gap: 28px; /* уменьшили расстояние между текстом и видео */
   align-items: center;
 }
 
+/* h1: “У нас — День Черной кошки” */
 .hero-title {
   grid-area: title;
   font-weight: 800;
   color: var(--accent);
   font-size: clamp(36px, 4.5vw, 60px);
-  line-height: 1.1;
-  margin-bottom: 8px; /* стало чуть плотнее */
+  line-height: 1.05;
+  margin: 0 0 2px 0; /* максимально прижали к h2 */
+  padding: 0;
 }
 
+/* удаляем стандартные отступы у h1 */
+h1.hero-title {
+  margin: 0 0 2px 0;
+}
+
+/* h2: “Черная пятница — уже не модно.” */
+.hero-subtitle {
+  font-weight: 800;
+  color: var(--accent);
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.1;
+  margin: 0 0 12px 0; /* убрали верхний отступ, оставили только нижний */
+  padding: 0;
+}
+
+/* общий ряд подзаголовка и текста */
 .hero-row {
   margin-top: 0;
   padding-top: 0;
@@ -66,17 +84,11 @@
   padding-top: 0;
 }
 
-.hero-subtitle {
-  font-weight: 800;
-  color: var(--accent);
-  font-size: clamp(32px, 4vw, 52px);
-  margin-bottom: 12px;
-}
-
 .hero-left {
   grid-area: left;
 }
 
+/* блок с котом */
 .cat-card {
   grid-area: right;
   max-width: 380px;
@@ -92,11 +104,31 @@
       "left"
       "right";
     text-align: center;
+    gap: 24px;
   }
 
   .hero-subtitle {
     font-size: clamp(28px, 6vw, 40px);
   }
+
+  .cat-card {
+    margin: 0 auto;
+  }
+}
+
+/* базовые стили для текста под заголовками */
+h1 {
+  font-size: clamp(32px, 4vw, 52px);
+  margin: 0;
+  color: var(--accent);
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-bottom: 28px;
+  font-size: 18px;
+}
+
 
   .cat-card {
     margin: 0 auto;
@@ -677,6 +709,7 @@
 
 </body>
 </html>
+
 
 
 
