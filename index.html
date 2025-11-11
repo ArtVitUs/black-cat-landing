@@ -36,6 +36,22 @@
   box-shadow: var(--shadow);
   position: relative;
 }
+.hero-main {
+  font-size: clamp(36px, 4.4vw, 64px);
+  font-weight: 800;
+  color: #97ba02;          /* зелёный InfoHit */
+  margin: 0 0 24px;
+  line-height: 1.1;
+  white-space: nowrap;     /* не переносить строку */
+}
+
+/* чтобы корректно работало на мобильных */
+@media (max-width: 880px) {
+  .hero-main {
+    white-space: normal;   /* разрешаем переносы на телефоне */
+    text-align: center;
+  }
+}
 
 .hero-inner {
   display: grid;
@@ -424,7 +440,7 @@
   <div class="hero-inner">
 
     <!-- первая строка: на всю ширину -->
-    <h1 class="hero-title">У нас — День Черной кошки</h1>
+<h1 class="hero-title highlight nowrap">У нас — День Черной кошки</h1>
 
     <!-- вторая строка и остальной текст слева -->
     <div class="hero-left">
@@ -666,6 +682,7 @@
 
 </body>
 </html>
+
 
 
 
