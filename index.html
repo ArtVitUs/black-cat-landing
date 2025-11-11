@@ -260,7 +260,69 @@
 
 .section + .section {
   margin-top: 0;
+}/* Мифы и правда о Черных кошках */
+.myths-section h2 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 32px;
 }
+
+.myths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.myth-card {
+  background: var(--gray-800);
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+.myth-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.myth-icon, .truth-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.myth-content h3,
+.truth-content h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+
+.myth-content p,
+.truth-content p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.truth {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+@media (max-width: 768px) {
+  .myth-card {
+    padding: 20px;
+  }
+  .myths-grid {
+    gap: 16px;
+  }
+}
+
 
   </style>
 </head>
@@ -370,6 +432,41 @@
       Акция завершена 🐾
     </div>
   </div>
+      <section class="section myths-section">
+  <h2>🐾 Мифы и правда о «Черных кошках»</h2>
+
+  <div class="myths-grid">
+    <div class="myth-card">
+      <div class="myth-icon">❌</div>
+      <div class="myth-content">
+        <h3>Миф</h3>
+        <p>Черные кошки — к беде.</p>
+      </div>
+      <div class="truth">
+        <div class="truth-icon">✅</div>
+        <div class="truth-content">
+          <h3>Правда</h3>
+          <p>В древнем Египте они символизировали удачу и богатство — как <strong>скидки до 90%</strong> на ИнфоХит.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="myth-card">
+      <div class="myth-icon">❌</div>
+      <div class="myth-content">
+        <h3>Миф</h3>
+        <p>День Черной кошки — это обман и дешевые товары.</p>
+      </div>
+      <div class="truth">
+        <div class="truth-icon">✅</div>
+        <div class="truth-content">
+          <h3>Правда</h3>
+          <p>На <strong>ИнфоХит</strong> только реальные скидки на лучшие курсы. В период акции цена падает, а ценность знаний — нет!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 </section>
     <section id="catalog" class="section">
       <div class="deal">
@@ -465,6 +562,7 @@
 
 </body>
 </html>
+
 
 
 
