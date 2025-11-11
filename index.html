@@ -209,25 +209,17 @@
   text-align:center;
   font-size:14px;
   color:var(--muted);
-}/* Таймер акции */
-
-/* Таймер акции */
-
-.timer-wrapper {
-  margin-top: 40px;
-  text-align: center;       /* центрируем весь блок */
-  color: var(--text);
-  font-size: 14px;
+}.timer-section {
+  text-align: center;
 }
 
-.timer-title {
-  margin-bottom: 12px;
-  color: var(--muted);
-  font-weight: 500;
+.timer-section h2 {
+  color: var(--accent);
+  margin-bottom: 20px;
 }
 
 .timer {
-  display: inline-flex;      /* делаем компактный ряд по центру */
+  display: inline-flex;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
@@ -260,6 +252,7 @@
   font-weight: 600;
 }
 
+
 .section {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -268,8 +261,6 @@
 .section + .section {
   margin-top: 0;
 }
-
-
 
   </style>
 </head>
@@ -354,33 +345,32 @@
     В этот раз удача точно на вашей стороне. Главное — не прозевать старт акции!
   </p>
 </section>
-    <div class="timer-wrapper" style="text-align:center;" >
-  <div class="timer-title">До конца акции осталось:</div>
-  <div class="timer" id="blackCatTimer">
-    <div class="timer-item">
-      <span class="timer-value" id="t-days">00</span>
-      <span class="timer-label">дней</span>
+    <section class="section timer-section">
+  <h2>⏳ До конца акции осталось:</h2>
+  <div class="timer-wrapper">
+    <div class="timer" id="blackCatTimer">
+      <div class="timer-item">
+        <span class="timer-value" id="t-days">00</span>
+        <span class="timer-label">дней</span>
+      </div>
+      <div class="timer-item">
+        <span class="timer-value" id="t-hours">00</span>
+        <span class="timer-label">часов</span>
+      </div>
+      <div class="timer-item">
+        <span class="timer-value" id="t-minutes">00</span>
+        <span class="timer-label">минут</span>
+      </div>
+      <div class="timer-item">
+        <span class="timer-value" id="t-seconds">00</span>
+        <span class="timer-label">секунд</span>
+      </div>
     </div>
-    <div class="timer-item">
-      <span class="timer-value" id="t-hours">00</span>
-      <span class="timer-label">часов</span>
-    </div>
-    <div class="timer-item">
-      <span class="timer-value" id="t-minutes">00</span>
-      <span class="timer-label">минут</span>
-    </div>
-    <div class="timer-item">
-      <span class="timer-value" id="t-seconds">00</span>
-      <span class="timer-label">секунд</span>
+    <div class="timer-end" id="timerEnd" style="display:none;">
+      Акция завершена 🐾
     </div>
   </div>
-  <div class="timer-end" id="timerEnd" style="display:none;">
-    Акция завершена 🐾
-  </div>
-</div>
-
-
-
+</section>
     <section id="catalog" class="section">
       <div class="deal">
         <h3>📚 ТОПовые курсы, от которых шерсть дыбом!</h3>
@@ -475,6 +465,7 @@
 
 </body>
 </html>
+
 
 
 
