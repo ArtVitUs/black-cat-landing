@@ -211,57 +211,55 @@
   color:var(--muted);
 }/* Таймер акции */
 
-.timer-wrapper{
-  margin-top:24px;
-  color:var(--text);
-  font-size:14px;
+/* Таймер акции */
+
+.timer-wrapper {
+  margin-top: 40px;
+  text-align: center;       /* центрируем весь блок */
+  color: var(--text);
+  font-size: 14px;
 }
 
-.timer-title{
-  text-align:left;
-  margin-bottom:8px;
-  color:var(--muted);
+.timer-title {
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-weight: 500;
 }
 
-.timer{
-  display:flex;
-  gap:8px;
-  align-items:center;
-  flex-wrap:wrap;
+.timer {
+  display: inline-flex;      /* делаем компактный ряд по центру */
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.timer-item{
-  background:rgba(0,0,0,.25);
-  border-radius:10px;
-  padding:8px 10px;
-  text-align:center;
-  min-width:72px;
+.timer-item {
+  background: rgba(0, 0, 0, .25);
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+  min-width: 80px;
 }
 
-.timer-value{
-  display:block;
-  font-size:18px;
-  font-weight:700;
-  color:var(--accent-light);
+.timer-value {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-light);
 }
 
-.timer-label{
-  font-size:11px;
-  color:var(--muted);
+.timer-label {
+  font-size: 12px;
+  color: var(--muted);
 }
 
-.timer-end{
-  margin-top:10px;
-  font-size:14px;
-  color:var(--accent-light);
+.timer-end {
+  margin-top: 10px;
+  font-size: 15px;
+  color: var(--accent-light);
+  font-weight: 600;
 }
 
-/* Центровка на мобильных */
-@media (max-width: 768px){
-  .timer-title{text-align:center;}
-  .timer{justify-content:center;}
-}
-    /* Единые отступы между блоками */
 .section {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -477,6 +475,7 @@
 
 </body>
 </html>
+
 
 
 
