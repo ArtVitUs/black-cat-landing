@@ -28,23 +28,64 @@
 
     .container{max-width:1120px;margin:0 auto;padding:0 24px}
 
-    .hero{background:radial-gradient(circle at top right,var(--accent-bg),transparent 60%),linear-gradient(180deg,var(--gray-900),var(--gray-800));border-radius:var(--radius);padding:80px 32px;box-shadow:var(--shadow)}
-    
-    .hero-inner {
-  grid-template-columns: 1.2fr 0.8fr;
+  .hero {
+  background: radial-gradient(circle at top right,var(--accent-bg),transparent 60%),
+              linear-gradient(180deg,var(--gray-900),var(--gray-800));
+  border-radius: var(--radius);
+  padding: 80px 32px;
+  box-shadow: var(--shadow);
+  position: relative;
 }
-    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-    @media(max-width:880px){.hero-inner{grid-template-columns:1fr;gap:24px;text-align:center}}
-    .hero::after {
-  content: "";
-  position: absolute;
-  top: 10%;
-  right: 8%;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(151,186,2,0.3) 0%, transparent 70%);
-  filter: blur(50px);
-  z-index: 0;
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* левый текст чуть шире */
+  grid-template-areas:
+    "title title"
+    "left  right";
+  gap: 40px;
+  align-items: center;
+}
+
+/* Заголовок на всю ширину */
+.hero-title {
+  grid-area: title;
+  margin: 0;
+  font-size: clamp(32px, 4vw, 52px);
+  color: var(--accent);
+}
+
+/* Левая колонка */
+.hero-left {
+  grid-area: left;
+}
+
+/* Правая колонка (кот) */
+.cat-card {
+  grid-area: right;
+  max-width: 380px;
+  margin-left: auto;
+}
+
+/* Адаптив: на мобиле все в колонку */
+@media (max-width: 880px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "left"
+      "right";
+    gap: 24px;
+    text-align: center;
+  }
+
+  .hero-left {
+    text-align: center;
+  }
+
+  .cat-card {
+    margin: 0 auto;
+  }
 }
 
 
@@ -339,48 +380,39 @@
 </head>
 <body>
   <header class="container">
-    <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <h1><span class="nowrap">Черная пятница — уже не модно.</span><br>У нас — День Черной кошки!</h1>
-          <p class="subtitle">Скидки до 90% на все онлайн‑курсы. 
-Без очередей и ожиданий — только ТОПовые знания от лучших школ
- <strong>ИнфоХит</strong>.</p>
-          <div class="cta-row">
-            <a href="#catalog" class="btn btn-primary">Ловите удачу за хвост!</a>
-            <a href="#why" class="btn btn-ghost">Почему сейчас?</a>
-          </div>
-        </div>
-        <div class="cat-card">
-          <video src="IMG_2129.MOV" class="cat-img" autoplay loop muted playsinline></video>
-          <div class="cat-caption">«Скидки не ждут. Прыгну — и заберу!»</div>
-        </div>
-      </div>
-    </section>
-  </header>
+   <section class="hero">
+  <div class="hero-inner">
 
-  <main class="container">
-    <section id="why" class="section">
-      <h2>🎩 Почему День Черной кошки — это выгодно</h2>
-      <p style="text-align:center;"><i>Пока другие копят на Черную пятницу, вы уже учитесь со скидкой</i></p>
-      <div class="cards">
-        <div class="card">
-          <h3>🐾 Трендовые профессии</h3>
-        </div>
-        <div class="card">
-          <h3>🐾 Курсы, которые реально меняют жизнь</h3>
-        </div>
-        <div class="card">
-          <h3>🐾 Цены, которые не повторятся до следующего года </h3>
-        </div>
-        <div class="card">
-          <h3>🐾 Только ТОПовые авторы и школы <strong>ИнфоХит</strong></h3>
-        </div>
-        <div class="card">
-          <h3>🐾 Никаких очередей и суеты — учеба в один клик </h3>
-        </div>
-      </div><p style="text-align:center;">Черная кошка приносит удачу…
-</p>    </section>
+    <!-- Заголовок на всю ширину -->
+    <h1 class="hero-title">
+      Черная пятница — уже не модно.
+    </h1>
+
+    <!-- Левая колонка: продолжение текста + кнопки -->
+    <div class="hero-left">
+      <p class="subtitle">
+        У нас — <strong>День Черной кошки!</strong><br>
+        Скидки до 90% на все онлайн-курсы. Без очередей и ожиданий — только
+        ТОПовые знания от лучших школ <strong>ИнфоХит</strong>.
+      </p>
+
+      <div class="cta-row">
+        <a href="#catalog" class="btn btn-primary">Ловите удачу за хвост!</a>
+        <a href="#why" class="btn btn-ghost">Почему сейчас?</a>
+      </div>
+    </div>
+
+    <!-- Правая колонка: карточка с котом / видео -->
+    <div class="cat-card">
+ <video src="IMG_2129.MOV" class="cat-img" autoplay loop muted playsinline></video>
+<div class="cat-caption">«Скидки не ждут. Прыгну — и заберу!»</div>
+
+      <div class="cat-caption">«Скидки не ждут. Прыгну — и заберу!»</div>
+    </div>
+
+  </div>
+</section>
+
     <section class="section how-to-benefit">
   <h2>🎁 Как получить максимум выгоды</h2>
 
@@ -569,6 +601,7 @@
 
 </body>
 </html>
+
 
 
 
