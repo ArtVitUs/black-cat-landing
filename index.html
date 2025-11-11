@@ -267,19 +267,19 @@
   margin-bottom: 32px;
 }
 
-.myths-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-}
-
 .myth-card {
   background: var(--gray-800);
   border-radius: 18px;
-  padding: 24px;
+  padding: 32px 24px;
   border: 1px solid rgba(255,255,255,0.08);
   box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  text-align: center; /* ВАЖНО — центрирует контент */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.2s ease, border-color 0.3s ease;
+  min-height: 220px;
 }
 
 .myth-card:hover {
@@ -288,14 +288,14 @@
 }
 
 .myth-icon, .truth-icon {
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 28px;
+  margin-bottom: 6px;
 }
 
 .myth-content h3,
 .truth-content h3 {
-  margin: 0;
-  font-size: 16px;
+  margin: 4px 0;
+  font-size: 18px;
   font-weight: 700;
   color: var(--accent-light);
 }
@@ -303,16 +303,18 @@
 .myth-content p,
 .truth-content p {
   margin: 4px 0 0;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--muted);
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .truth {
-  margin-top: 16px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
 }
+
 
 @media (max-width: 768px) {
   .myth-card {
@@ -564,6 +566,7 @@
 
 </body>
 </html>
+
 
 
 
