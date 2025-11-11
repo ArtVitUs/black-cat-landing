@@ -70,6 +70,20 @@
   font-size: clamp(36px, 4.5vw, 60px);
   line-height: 1.1;
 }
+/* Заголовок "У нас — День Черной кошки" в одну строку на десктопе */
+.hero-title.nowrap {
+  white-space: nowrap;
+  font-size: clamp(32px, 3.6vw, 52px); /* чуть поменьше, чем общий h1 */
+}
+
+
+/* На мобильных разрешаем перенос, чтобы не вылезало за экран */
+@media (max-width: 880px) {
+  .hero-title.nowrap {
+    white-space: normal;
+    text-align: center;
+  }
+}
 
 .hero-subtitle {
   margin: 10px 0 0; /* 🔹 убираем большой отступ сверху */
@@ -682,6 +696,7 @@
 
 </body>
 </html>
+
 
 
 
