@@ -39,7 +39,7 @@
 
 .hero-inner {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr; /* левый текст чуть шире */
+  grid-template-columns: 1.1fr 0.9fr;
   grid-template-areas:
     "title title"
     "left  right";
@@ -47,27 +47,33 @@
   align-items: center;
 }
 
-/* Заголовок на всю ширину */
 .hero-title {
   grid-area: title;
-  margin: 0;
-  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
   color: var(--accent);
+  font-size: clamp(36px, 4.5vw, 60px);
+  margin: 0 0 20px;
+  line-height: 1.1;
 }
 
-/* Левая колонка */
+.hero-subtitle {
+  font-weight: 800;
+  color: var(--accent);
+  font-size: clamp(32px, 4vw, 52px);
+  margin-bottom: 12px;
+}
+
 .hero-left {
   grid-area: left;
 }
 
-/* Правая колонка (кот) */
 .cat-card {
   grid-area: right;
   max-width: 380px;
   margin-left: auto;
 }
 
-/* Адаптив: на мобиле все в колонку */
+/* адаптив */
 @media (max-width: 880px) {
   .hero-inner {
     grid-template-columns: 1fr;
@@ -75,20 +81,17 @@
       "title"
       "left"
       "right";
-    gap: 24px;
     text-align: center;
   }
 
-  .hero-left {
-    text-align: center;
+  .hero-subtitle {
+    font-size: clamp(28px, 6vw, 40px);
   }
 
   .cat-card {
     margin: 0 auto;
   }
 }
-
-
     h1{font-size:clamp(32px,4vw,52px);margin:0 0 16px;color:var(--accent)}
     .subtitle{color:var(--muted);margin-bottom:28px;font-size:18px}
 
@@ -418,19 +421,18 @@
 </head>
 <body>
   <header class="container">
-   <section class="hero">
+ <section class="hero">
   <div class="hero-inner">
 
-    <!-- Заголовок на всю ширину -->
-    <h1 class="hero-title">
-      Черная пятница — уже не модно.
-    </h1>
+    <!-- первая строка: на всю ширину -->
+    <h1 class="hero-title">Черная пятница — уже не модно.</h1>
 
-    <!-- Левая колонка: продолжение текста + кнопки -->
+    <!-- вторая строка и остальной текст слева -->
     <div class="hero-left">
-      <h2>У нас — <strong>День Черной кошки!</strong></h2>
+      <h2 class="hero-subtitle">У нас — День Черной кошки!</h2>
       <p class="subtitle">
-        Скидки до 90% на все онлайн-курсы. Без очередей и ожиданий — только ТОПовые знания от лучших школ <strong>ИнфоХит</strong>.
+        Скидки до 90% на все онлайн-курсы. Без очередей и ожиданий — только
+        ТОПовые знания от лучших школ <strong>ИнфоХит</strong>.
       </p>
 
       <div class="cta-row">
@@ -439,10 +441,10 @@
       </div>
     </div>
 
-    <!-- Правая колонка: карточка с котом / видео -->
+    <!-- правая часть -->
     <div class="cat-card">
- <video src="IMG_2129.MOV" class="cat-img" autoplay loop muted playsinline></video>
-<div class="cat-caption">«Скидки не ждут. Прыгну — и заберу!»</div>
+      <video src="IMG_2127.MOV" autoplay muted loop playsinline></video>
+      <div class="cat-caption">«Скидки не ждут. Прыгну — и заберу!»</div>
     </div>
 
   </div>
@@ -665,6 +667,7 @@
 
 </body>
 </html>
+
 
 
 
