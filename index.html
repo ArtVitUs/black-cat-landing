@@ -477,7 +477,50 @@ h1 {
   display: block;
   color: var(--muted);
   font-size: 14px;
+}/* Полоска под анимацию следов */
+.footer-paws {
+  position: relative;
+  max-width: 320px;      /* ширина дорожки */
+  height: 44px;          /* высота под лапы */
+  margin: 24px auto 8px; /* отступы сверху/снизу, по центру */
+  overflow: hidden;
 }
+
+/* Лента со следами, движется справа налево */
+.paw-trail {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 200%;           /* шире, чтобы следы «заезжали» */
+  display: flex;
+  gap: 10px;
+  animation: pawWalk 6s linear infinite;
+}
+
+/* Оформление лап */
+.paw-trail span {
+  font-size: 26px;
+  opacity: 0.9;
+  text-shadow: 0 0 6px rgba(0,0,0,.6);
+  /* поворачиваем лапы на 180° — теперь они «смотрят» влево */
+  transform: rotate(180deg);
+}
+
+/* Чередуем по высоте, чтобы следы были «змейкой» */
+.paw-trail span:nth-child(even) {
+  transform: rotate(180deg) translateY(8px);
+}
+
+/* Анимация движения всей ленты */
+@keyframes pawWalk {
+  from {
+    transform: translateX(60%);   /* старт справа */
+  }
+  to {
+    transform: translateX(-60%);  /* уход влево */
+  }
+}
+
 
   </style>
 </head>
@@ -672,7 +715,20 @@ h1 {
 <footer class="footer container">
   <p><strong>Пятницы приходят и&nbsp;уходят, а&nbsp;знания остаются с&nbsp;вами навсегда.</strong><br/>
 Не&nbsp;ждите, действуйте.
-</p>
+</p><!-- Полоска со следами кошки -->
+<div class="footer-paws">
+  <div class="paw-trail">
+    <span>🐾</span>
+    <span>🐾</span>
+    <span>🐾</span>
+    <span>🐾</span>
+    <span>🐾</span>
+    <span>🐾</span>
+    <span>🐾</span>
+    <span>🐾</span>
+  </div>
+</div>
+
   <span class="copyright">©&nbsp;ИнфоХит, 2025</span>
 </footer>
 
@@ -720,6 +776,7 @@ h1 {
 
 </body>
 </html>
+
 
 
 
